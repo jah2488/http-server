@@ -8,9 +8,9 @@
 
 #include <iostream>
 #include <stdexcept>
-#include <igloo/igloo_alt.h>
+//#include <igloo/igloo_alt.h>
 #include "server.h"
-using namespace igloo;
+//using namespace igloo;
 
 void start( const char *port_number )
 {
@@ -22,7 +22,7 @@ void start( const char *port_number )
 
 int main( int arg_count, char** arguments )
 {
-    TestRunner::RunAllTests();
+//    TestRunner::RunAllTests();
     
     const char *port_number = "3000";
     

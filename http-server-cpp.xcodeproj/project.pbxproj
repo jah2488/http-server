@@ -29,6 +29,63 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A0807B491585837300F7FF06 /* constraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constraints.h; sourceTree = "<group>"; };
+		A0807B4A1585837300F7FF06 /* containsconstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = containsconstraint.h; sourceTree = "<group>"; };
+		A0807B4B1585837300F7FF06 /* endswithconstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = endswithconstraint.h; sourceTree = "<group>"; };
+		A0807B4C1585837300F7FF06 /* equalsconstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = equalsconstraint.h; sourceTree = "<group>"; };
+		A0807B4E1585837300F7FF06 /* andexpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = andexpression.h; sourceTree = "<group>"; };
+		A0807B4F1585837300F7FF06 /* expression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = expression.h; sourceTree = "<group>"; };
+		A0807B501585837300F7FF06 /* expression_fwd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = expression_fwd.h; sourceTree = "<group>"; };
+		A0807B511585837300F7FF06 /* notexpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notexpression.h; sourceTree = "<group>"; };
+		A0807B521585837300F7FF06 /* orexpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = orexpression.h; sourceTree = "<group>"; };
+		A0807B531585837300F7FF06 /* fulfillsconstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fulfillsconstraint.h; sourceTree = "<group>"; };
+		A0807B541585837300F7FF06 /* haslengthconstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = haslengthconstraint.h; sourceTree = "<group>"; };
+		A0807B551585837300F7FF06 /* isgreaterthanconstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = isgreaterthanconstraint.h; sourceTree = "<group>"; };
+		A0807B561585837300F7FF06 /* islessthanconstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = islessthanconstraint.h; sourceTree = "<group>"; };
+		A0807B571585837300F7FF06 /* startswithconstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = startswithconstraint.h; sourceTree = "<group>"; };
+		A0807B591585837300F7FF06 /* alternativeregistrationaliases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alternativeregistrationaliases.h; sourceTree = "<group>"; };
+		A0807B5A1585837300F7FF06 /* assert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = assert.h; sourceTree = "<group>"; };
+		A0807B5B1585837300F7FF06 /* assertionexception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = assertionexception.h; sourceTree = "<group>"; };
+		A0807B5C1585837300F7FF06 /* assertmacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = assertmacro.h; sourceTree = "<group>"; };
+		A0807B5D1585837300F7FF06 /* context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = context.h; sourceTree = "<group>"; };
+		A0807B5E1585837300F7FF06 /* contextprovider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = contextprovider.h; sourceTree = "<group>"; };
+		A0807B5F1585837300F7FF06 /* contextregistry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = contextregistry.h; sourceTree = "<group>"; };
+		A0807B601585837300F7FF06 /* contextrunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = contextrunner.h; sourceTree = "<group>"; };
+		A0807B611585837300F7FF06 /* core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = core.h; sourceTree = "<group>"; };
+		A0807B621585837300F7FF06 /* defaultregistrationaliases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defaultregistrationaliases.h; sourceTree = "<group>"; };
+		A0807B631585837300F7FF06 /* exceptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exceptions.h; sourceTree = "<group>"; };
+		A0807B651585837300F7FF06 /* defaulttestresultsoutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defaulttestresultsoutput.h; sourceTree = "<group>"; };
+		A0807B661585837300F7FF06 /* outputters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = outputters.h; sourceTree = "<group>"; };
+		A0807B671585837300F7FF06 /* testresultsoutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testresultsoutput.h; sourceTree = "<group>"; };
+		A0807B681585837300F7FF06 /* visualstudiooutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = visualstudiooutput.h; sourceTree = "<group>"; };
+		A0807B691585837300F7FF06 /* progressoutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = progressoutput.h; sourceTree = "<group>"; };
+		A0807B6A1585837300F7FF06 /* registration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registration.h; sourceTree = "<group>"; };
+		A0807B6B1585837300F7FF06 /* stringize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stringize.h; sourceTree = "<group>"; };
+		A0807B6C1585837300F7FF06 /* stringizers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stringizers.h; sourceTree = "<group>"; };
+		A0807B6D1585837300F7FF06 /* testlistener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testlistener.h; sourceTree = "<group>"; };
+		A0807B6E1585837300F7FF06 /* testlisteneraggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testlisteneraggregator.h; sourceTree = "<group>"; };
+		A0807B6F1585837300F7FF06 /* testresult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testresult.h; sourceTree = "<group>"; };
+		A0807B701585837300F7FF06 /* testresultfactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testresultfactory.h; sourceTree = "<group>"; };
+		A0807B711585837300F7FF06 /* testresults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testresults.h; sourceTree = "<group>"; };
+		A0807B721585837300F7FF06 /* testrunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testrunner.h; sourceTree = "<group>"; };
+		A0807B741585837300F7FF06 /* constraintadapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constraintadapter.h; sourceTree = "<group>"; };
+		A0807B751585837300F7FF06 /* constraintlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constraintlist.h; sourceTree = "<group>"; };
+		A0807B761585837300F7FF06 /* expressionbuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = expressionbuilder.h; sourceTree = "<group>"; };
+		A0807B771585837300F7FF06 /* fluent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fluent.h; sourceTree = "<group>"; };
+		A0807B791585837300F7FF06 /* andoperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = andoperator.h; sourceTree = "<group>"; };
+		A0807B7B1585837300F7FF06 /* alloperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alloperator.h; sourceTree = "<group>"; };
+		A0807B7C1585837300F7FF06 /* atleastoperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = atleastoperator.h; sourceTree = "<group>"; };
+		A0807B7D1585837300F7FF06 /* atmostoperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = atmostoperator.h; sourceTree = "<group>"; };
+		A0807B7E1585837300F7FF06 /* collectionconstraintevaluator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = collectionconstraintevaluator.h; sourceTree = "<group>"; };
+		A0807B7F1585837300F7FF06 /* collectionoperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = collectionoperator.h; sourceTree = "<group>"; };
+		A0807B801585837300F7FF06 /* exactlyoperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exactlyoperator.h; sourceTree = "<group>"; };
+		A0807B811585837300F7FF06 /* noneoperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = noneoperator.h; sourceTree = "<group>"; };
+		A0807B821585837300F7FF06 /* constraintoperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constraintoperator.h; sourceTree = "<group>"; };
+		A0807B831585837300F7FF06 /* notoperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notoperator.h; sourceTree = "<group>"; };
+		A0807B841585837300F7FF06 /* oroperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = oroperator.h; sourceTree = "<group>"; };
+		A0807B851585837300F7FF06 /* igloo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = igloo.h; sourceTree = "<group>"; };
+		A0807B861585837300F7FF06 /* igloo_alt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = igloo_alt.h; sourceTree = "<group>"; };
+		A0807B871585837300F7FF06 /* igloo_framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = igloo_framework.h; sourceTree = "<group>"; };
 		D00D264F15825ED800450B27 /* http-server-cpp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "http-server-cpp"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00D265315825ED800450B27 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D00D265515825ED800450B27 /* http_server_cpp.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = http_server_cpp.1; sourceTree = "<group>"; };
@@ -52,9 +109,131 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A0807B471585837300F7FF06 /* igloo */ = {
+			isa = PBXGroup;
+			children = (
+				A0807B481585837300F7FF06 /* constraints */,
+				A0807B581585837300F7FF06 /* core */,
+				A0807B731585837300F7FF06 /* fluent */,
+				A0807B851585837300F7FF06 /* igloo.h */,
+				A0807B861585837300F7FF06 /* igloo_alt.h */,
+				A0807B871585837300F7FF06 /* igloo_framework.h */,
+			);
+			name = igloo;
+			path = "http-server-cpp/igloo";
+			sourceTree = "<group>";
+		};
+		A0807B481585837300F7FF06 /* constraints */ = {
+			isa = PBXGroup;
+			children = (
+				A0807B491585837300F7FF06 /* constraints.h */,
+				A0807B4A1585837300F7FF06 /* containsconstraint.h */,
+				A0807B4B1585837300F7FF06 /* endswithconstraint.h */,
+				A0807B4C1585837300F7FF06 /* equalsconstraint.h */,
+				A0807B4D1585837300F7FF06 /* expressions */,
+				A0807B531585837300F7FF06 /* fulfillsconstraint.h */,
+				A0807B541585837300F7FF06 /* haslengthconstraint.h */,
+				A0807B551585837300F7FF06 /* isgreaterthanconstraint.h */,
+				A0807B561585837300F7FF06 /* islessthanconstraint.h */,
+				A0807B571585837300F7FF06 /* startswithconstraint.h */,
+			);
+			path = constraints;
+			sourceTree = "<group>";
+		};
+		A0807B4D1585837300F7FF06 /* expressions */ = {
+			isa = PBXGroup;
+			children = (
+				A0807B4E1585837300F7FF06 /* andexpression.h */,
+				A0807B4F1585837300F7FF06 /* expression.h */,
+				A0807B501585837300F7FF06 /* expression_fwd.h */,
+				A0807B511585837300F7FF06 /* notexpression.h */,
+				A0807B521585837300F7FF06 /* orexpression.h */,
+			);
+			path = expressions;
+			sourceTree = "<group>";
+		};
+		A0807B581585837300F7FF06 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				A0807B591585837300F7FF06 /* alternativeregistrationaliases.h */,
+				A0807B5A1585837300F7FF06 /* assert.h */,
+				A0807B5B1585837300F7FF06 /* assertionexception.h */,
+				A0807B5C1585837300F7FF06 /* assertmacro.h */,
+				A0807B5D1585837300F7FF06 /* context.h */,
+				A0807B5E1585837300F7FF06 /* contextprovider.h */,
+				A0807B5F1585837300F7FF06 /* contextregistry.h */,
+				A0807B601585837300F7FF06 /* contextrunner.h */,
+				A0807B611585837300F7FF06 /* core.h */,
+				A0807B621585837300F7FF06 /* defaultregistrationaliases.h */,
+				A0807B631585837300F7FF06 /* exceptions.h */,
+				A0807B641585837300F7FF06 /* outputters */,
+				A0807B691585837300F7FF06 /* progressoutput.h */,
+				A0807B6A1585837300F7FF06 /* registration.h */,
+				A0807B6B1585837300F7FF06 /* stringize.h */,
+				A0807B6C1585837300F7FF06 /* stringizers.h */,
+				A0807B6D1585837300F7FF06 /* testlistener.h */,
+				A0807B6E1585837300F7FF06 /* testlisteneraggregator.h */,
+				A0807B6F1585837300F7FF06 /* testresult.h */,
+				A0807B701585837300F7FF06 /* testresultfactory.h */,
+				A0807B711585837300F7FF06 /* testresults.h */,
+				A0807B721585837300F7FF06 /* testrunner.h */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		A0807B641585837300F7FF06 /* outputters */ = {
+			isa = PBXGroup;
+			children = (
+				A0807B651585837300F7FF06 /* defaulttestresultsoutput.h */,
+				A0807B661585837300F7FF06 /* outputters.h */,
+				A0807B671585837300F7FF06 /* testresultsoutput.h */,
+				A0807B681585837300F7FF06 /* visualstudiooutput.h */,
+			);
+			path = outputters;
+			sourceTree = "<group>";
+		};
+		A0807B731585837300F7FF06 /* fluent */ = {
+			isa = PBXGroup;
+			children = (
+				A0807B741585837300F7FF06 /* constraintadapter.h */,
+				A0807B751585837300F7FF06 /* constraintlist.h */,
+				A0807B761585837300F7FF06 /* expressionbuilder.h */,
+				A0807B771585837300F7FF06 /* fluent.h */,
+				A0807B781585837300F7FF06 /* operators */,
+			);
+			path = fluent;
+			sourceTree = "<group>";
+		};
+		A0807B781585837300F7FF06 /* operators */ = {
+			isa = PBXGroup;
+			children = (
+				A0807B791585837300F7FF06 /* andoperator.h */,
+				A0807B7A1585837300F7FF06 /* collections */,
+				A0807B821585837300F7FF06 /* constraintoperator.h */,
+				A0807B831585837300F7FF06 /* notoperator.h */,
+				A0807B841585837300F7FF06 /* oroperator.h */,
+			);
+			path = operators;
+			sourceTree = "<group>";
+		};
+		A0807B7A1585837300F7FF06 /* collections */ = {
+			isa = PBXGroup;
+			children = (
+				A0807B7B1585837300F7FF06 /* alloperator.h */,
+				A0807B7C1585837300F7FF06 /* atleastoperator.h */,
+				A0807B7D1585837300F7FF06 /* atmostoperator.h */,
+				A0807B7E1585837300F7FF06 /* collectionconstraintevaluator.h */,
+				A0807B7F1585837300F7FF06 /* collectionoperator.h */,
+				A0807B801585837300F7FF06 /* exactlyoperator.h */,
+				A0807B811585837300F7FF06 /* noneoperator.h */,
+			);
+			path = collections;
+			sourceTree = "<group>";
+		};
 		D00D264415825ED800450B27 = {
 			isa = PBXGroup;
 			children = (
+				A0807B471585837300F7FF06 /* igloo */,
 				D00D265215825ED800450B27 /* http-server-cpp */,
 				D00D265015825ED800450B27 /* Products */,
 			);
@@ -71,10 +250,10 @@
 		D00D265215825ED800450B27 /* http-server-cpp */ = {
 			isa = PBXGroup;
 			children = (
-				D00D266115825F8500450B27 /* src */,
-				D00D266015825F7A00450B27 /* spec */,
 				D00D265515825ED800450B27 /* http_server_cpp.1 */,
 				D04042E7158427D7005D1492 /* index.html */,
+				D00D266015825F7A00450B27 /* spec */,
+				D00D266115825F8500450B27 /* src */,
 			);
 			path = "http-server-cpp";
 			sourceTree = "<group>";
@@ -212,6 +391,7 @@
 		D00D265A15825ED800450B27 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"HEADER_SEARCH_PATHS[arch=*]" = "/Users/Justin/8thlight/tasks/http-server/igloo/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;

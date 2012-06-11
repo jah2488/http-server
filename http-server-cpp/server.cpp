@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#include "logger.h"
 #include <stdio.h>
+#include "logger.h"
 #include <stdlib.h>
 #include <unistd.h>
 #include <errno.h>
@@ -21,6 +21,9 @@
 #include <sys/wait.h>
 #include <signal.h>
 #include "server.h"
+#include <iostream>
+#include <fstream>
+#include <unistd.h>
 
 Server::Server( ){}
 
@@ -37,6 +40,33 @@ void *get_in_addr( struct sockaddr *sa)
     return &(((struct sockaddr_in6*)sa)->sin6_addr);
 }
 
+std::string getRoute(char * route)
+{
+    
+    long elapsed_seconds;
+    char line[500];
+    
+    char currentDir[FILENAME_MAX];
+    
+    chdir("/Users/jherrick/8thLight/tasks/http-server/http-server-cpp");
+    getcwd(currentDir, sizeof(currentDir));
+    printf("Current Dir is \n %s", currentDir);
+    
+    std::ifstream file("./index.html");
+    
+    std::string response;
+    
+    if (file) {
+        while ( !file.eof() ) {
+            file.read(line, sizeof(line));
+            response.append(line);
+            printf("%s\n", line);
+        }
+        file.close();       
+    }
+    return response;
+}
+
 void handleConnection(int socket_file_descriptor, int new_socket_file_descriptor)
 {
     close(socket_file_descriptor);
@@ -44,12 +74,28 @@ void handleConnection(int socket_file_descriptor, int new_socket_file_descriptor
     char buffer[500];
     recv(new_socket_file_descriptor, buffer, 500, 0);
     
-    std::string header(buffer + 1, buffer + 20);
-    cout << header
+    char * header;
+    header = strtok(buffer, "\n");
+    printf("\n=== Request Info ===\n %s", header);
+    
+    char * method;
+    char * route;
+    char * http_version;
+    
+    char *tok = strtok(header, " ");
+    method = tok;
+    route  = tok = strtok(NULL, " ");
+    http_version = tok = strtok(NULL, " ");
+    
+    printf("\n method : %s\n route : %s\n version : %s\n", method, route, http_version);
+    std::string response = getRoute(route);
+    // Respond with response header.
+    // Send file
+    // Check for invalid files.
+    // -- send 404s
     write(new_socket_file_descriptor, "Hello~", 6);
     close(new_socket_file_descriptor);
     exit(0);
-
 }
 
 void Server::start( const char *port_number )
