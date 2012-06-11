@@ -7,12 +7,31 @@
 //
 
 #include <iostream>
+#include <stdexcept>
+#include <igloo/igloo_alt.h>
+#include "server.h"
+using namespace igloo;
 
-int main (int argc, const char * argv[])
+void start( const char *port_number )
 {
-
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+    printf("Starting Server...\n"); 
+    
+    Server server;
+    server.start( port_number );
 }
 
+int main( int arg_count, char** arguments )
+{
+    TestRunner::RunAllTests();
+    
+    const char *port_number = "3000";
+    
+    try
+    {
+        start( port_number );
+    }
+    catch ( std::runtime_error error) 
+    {
+        printf("Error: %s\n\n", error.what() );
+    }
+}

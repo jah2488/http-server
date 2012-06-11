@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		D00D265415825ED800450B27 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D00D265315825ED800450B27 /* main.cpp */; };
 		D00D265615825ED800450B27 /* http_server_cpp.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = D00D265515825ED800450B27 /* http_server_cpp.1 */; };
+		D00D265D15825F4500450B27 /* server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D00D265C15825F4500450B27 /* server.cpp */; };
+		D00D265F15825F5000450B27 /* spec_template.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D00D265E15825F5000450B27 /* spec_template.cpp */; };
+		D04042E4158280A0005D1492 /* logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D04042E3158280A0005D1492 /* logger.cpp */; };
+		D04042E6158401C9005D1492 /* logger_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D04042E5158401C9005D1492 /* logger_test.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +32,13 @@
 		D00D264F15825ED800450B27 /* http-server-cpp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "http-server-cpp"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00D265315825ED800450B27 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D00D265515825ED800450B27 /* http_server_cpp.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = http_server_cpp.1; sourceTree = "<group>"; };
+		D00D265C15825F4500450B27 /* server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = server.cpp; sourceTree = "<group>"; };
+		D00D265E15825F5000450B27 /* spec_template.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = spec_template.cpp; sourceTree = "<group>"; };
+		D00D26621582602100450B27 /* server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = server.h; sourceTree = "<group>"; };
+		D04042E115827A73005D1492 /* logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logger.h; sourceTree = "<group>"; };
+		D04042E3158280A0005D1492 /* logger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = logger.cpp; sourceTree = "<group>"; };
+		D04042E5158401C9005D1492 /* logger_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = logger_test.cpp; sourceTree = "<group>"; };
+		D04042E7158427D7005D1492 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +71,33 @@
 		D00D265215825ED800450B27 /* http-server-cpp */ = {
 			isa = PBXGroup;
 			children = (
-				D00D265315825ED800450B27 /* main.cpp */,
+				D00D266115825F8500450B27 /* src */,
+				D00D266015825F7A00450B27 /* spec */,
 				D00D265515825ED800450B27 /* http_server_cpp.1 */,
+				D04042E7158427D7005D1492 /* index.html */,
 			);
 			path = "http-server-cpp";
+			sourceTree = "<group>";
+		};
+		D00D266015825F7A00450B27 /* spec */ = {
+			isa = PBXGroup;
+			children = (
+				D00D265E15825F5000450B27 /* spec_template.cpp */,
+				D04042E5158401C9005D1492 /* logger_test.cpp */,
+			);
+			name = spec;
+			sourceTree = "<group>";
+		};
+		D00D266115825F8500450B27 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				D00D265315825ED800450B27 /* main.cpp */,
+				D00D265C15825F4500450B27 /* server.cpp */,
+				D00D26621582602100450B27 /* server.h */,
+				D04042E115827A73005D1492 /* logger.h */,
+				D04042E3158280A0005D1492 /* logger.cpp */,
+			);
+			name = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -117,6 +151,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D00D265415825ED800450B27 /* main.cpp in Sources */,
+				D00D265D15825F4500450B27 /* server.cpp in Sources */,
+				D00D265F15825F5000450B27 /* spec_template.cpp in Sources */,
+				D04042E4158280A0005D1492 /* logger.cpp in Sources */,
+				D04042E6158401C9005D1492 /* logger_test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,11 +177,12 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = "/Users/Justin/8thlight/tasks/http-server/";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -160,7 +199,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -203,6 +242,7 @@
 				D00D265B15825ED800450B27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
