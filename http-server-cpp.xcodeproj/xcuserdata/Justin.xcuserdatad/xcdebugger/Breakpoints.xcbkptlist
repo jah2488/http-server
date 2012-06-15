@@ -9,11 +9,53 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "http-server-cpp/server.cpp"
-         timestampString = "361480222.541191"
+         timestampString = "361493227.569338"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "31"
-         endingLineNumber = "31">
+         startingLineNumber = "32"
+         endingLineNumber = "32">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "http-server-cpp/server.cpp"
+         timestampString = "361493227.569338"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "101"
+         endingLineNumber = "101"
+         landmarkName = "handleConnection(int socket_file_descriptor, int new_socket_file_descriptor)"
+         landmarkType = "7">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "http-server-cpp/server.cpp"
+         timestampString = "361493227.569338"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "107"
+         endingLineNumber = "107"
+         landmarkName = "handleConnection(int socket_file_descriptor, int new_socket_file_descriptor)"
+         landmarkType = "7">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "http-server-cpp/server.cpp"
+         timestampString = "361493227.569338"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "107"
+         endingLineNumber = "107"
+         landmarkName = "handleConnection(int socket_file_descriptor, int new_socket_file_descriptor)"
+         landmarkType = "7">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

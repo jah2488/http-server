@@ -25,6 +25,7 @@
 #include <iostream>
 #include <fstream>
 #include <unistd.h>
+#include <dirent.h>
 
 Server::Server( ){}
 
@@ -86,37 +87,94 @@ void handleConnection(int socket_file_descriptor, int new_socket_file_descriptor
     printf("\n method : %s\n route : %s\n version : %s\n", method, route, http_version);
     //-- request headers
     
+    
     //-- load file -- extract function
-    std::ifstream file;
-    file.open("./index.html");
     
-    file.seekg(0, std::ios::end);
-    long length = file.tellg();
-    file.seekg(0, std::ios::beg);
+    char *path;
+    char *file_type;
+    char *token = strtok(route, ".");
+    path = token;
+    file_type = token = strtok(NULL, ".");
     
-    printf("[%d]File Length : %ld\n", getpid(),length);
-    char file_buffer[length];
+    std::ifstream d_file;
     
-    file.read(file_buffer,length);
-    file.close();  
-    //-- load file
-    
-    //-- generate timeDate stamp
-    time_t now;
-    time(&now);
-    char date[39]; 
-    strftime(date, sizeof(date), "Date: %a, %d %b %Y %X %Z\r\n\r\n", gmtime(&now));
-    //-- generate timeDate stamp
+    if (strcmp(route, "/") == 0) {
+        d_file.open("./index.html", std::ifstream::in);
+    } else {
+        char expanded_route[FILENAME_MAX];
+        if (file_type != NULL) {
+            sprintf(expanded_route, ".%s.%s", path, file_type);
+            d_file.open(expanded_route, std::ifstream::in); 
+        } else {
+            sprintf(expanded_route, ".%s", path);
+            DIR *dir;
+            struct dirent *ent;
+            dir = opendir(expanded_route);
+            if (dir != NULL) {
+                send(new_socket_file_descriptor, "HTTP/1.1 200\r\n", 14, 0);
+                send(new_socket_file_descriptor, "Content-type: text/html\r\n", 25, 0);
+                send(new_socket_file_descriptor, "Server: jherrick-server/0.1\r\n\r\n", 31, 0);
+                send(new_socket_file_descriptor, "<html><head><title>Directory Listing</title></head><body><h1>Directory</h1>", 75, 0);
+                while ( (ent = readdir(dir)) != NULL) {
+                    char dir_file[ent->d_namlen];
+                    sprintf(dir_file, "%s\n",ent->d_name);
+                    send(new_socket_file_descriptor, "<p>", 4, 0);
+                    send(new_socket_file_descriptor, dir_file, sizeof(dir_file), 0);
+                    send(new_socket_file_descriptor, "</p>", 5, 0);
+                }
+                send(new_socket_file_descriptor, "</body></html>", 33, 0);
+                close(new_socket_file_descriptor);               
+                closedir(dir);
+            } else {
+            }
+        }
+    }
+    if (d_file == NULL) {
+        perror("Error Opening File");
+    }
+    if (d_file.is_open()) {
+        
+        d_file.seekg(0, std::ios::end);
+        long length = d_file.tellg();
+        printf("[%d]File Length : %ld\n", getpid(),length);
+        d_file.seekg(0, std::ios::beg);
+        
+        char file_buffer[length];
+        
+        d_file.read(file_buffer,length);
+        d_file.close();  
+        
+        //-- generate timeDate stamp
+        time_t now;
+        time(&now);
+        char date[39]; 
+        strftime(date, sizeof(date), "Date: %a, %d %b %Y %X %Z\r\n\r\n", gmtime(&now));
+        //-- generate timeDate stamp
+       
+        
+        //-- response -- extract function
+        send(new_socket_file_descriptor, "HTTP/1.1 200\r\n", 14, 0);
+        send(new_socket_file_descriptor, "Content-type: text/html\r\n", 25, 0);
+        send(new_socket_file_descriptor, "Server: jherrick-server/0.1\r\n", 29, 0);
+        send(new_socket_file_descriptor, date, sizeof(date), 0);
+        send(new_socket_file_descriptor, file_buffer, sizeof(file_buffer), 0);
+        close(new_socket_file_descriptor);
+        //-- response
+            
+    } else {
+        // file not found -- throw 404 
+        //-- response -- extract function
+        const char response[109] = "<html><head><title>404 Error</title></head><body><h1>404 Error: Specified Route Not Found</h1></body></html>";
+        send(new_socket_file_descriptor, "HTTP/1.1 400 Not Found\r\n", 14, 0);
+        send(new_socket_file_descriptor, "Content-type: text/html\r\n", 25, 0);
+        send(new_socket_file_descriptor, "Server: jherrick-server/0.1\r\n\r\n", 31, 0);
+        send(new_socket_file_descriptor, response, sizeof(response), 0);
+        close(new_socket_file_descriptor);
+        //-- response
+        
+    }
+   //-- load file
    
-    //-- response -- extract function
-    send(new_socket_file_descriptor, "HTTP/1.1 200\r\n", 14, 0);
-    send(new_socket_file_descriptor, "Content-type: text/html\r\n", 25, 0);
-    send(new_socket_file_descriptor, "Server: jherrick-server/0.1\r\n", 29, 0);
-    send(new_socket_file_descriptor, date, sizeof(date), 0);
-    send(new_socket_file_descriptor, file_buffer, sizeof(file_buffer), 0);
-    close(new_socket_file_descriptor);
-    //-- response
-    
     exit(0);
 }
 
