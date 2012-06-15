@@ -11,9 +11,9 @@
 
 class Server
 {
-    public:
+public:
     Server();
-    void start( const char * ); 
+    void start( const char * port_number, const char * dir); 
 };
 
 #endif

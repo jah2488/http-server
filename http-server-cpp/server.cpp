@@ -20,6 +20,7 @@
 #include <arpa/inet.h>
 #include <sys/wait.h>
 #include <signal.h>
+#include <time.h>
 #include "server.h"
 #include <iostream>
 #include <fstream>
@@ -40,37 +41,32 @@ void *get_in_addr( struct sockaddr *sa)
     return &(((struct sockaddr_in6*)sa)->sin6_addr);
 }
 
-std::string getRoute(char * route)
+char getRoute(char * route)
 {
     
-    long elapsed_seconds;
-    char line[500];
+    std::ifstream file;
+    file.open("./index.html");
     
-    char currentDir[FILENAME_MAX];
+    file.seekg(0, std::ios::end);
+    long length = file.tellg();
+    file.seekg(0, std::ios::beg);
     
-    chdir("/Users/jherrick/8thLight/tasks/http-server/http-server-cpp");
-    getcwd(currentDir, sizeof(currentDir));
-    printf("Current Dir is \n %s", currentDir);
+    printf("File Length : %ld\n", length);
+    char file_buffer[length];
     
-    std::ifstream file("./index.html");
+    file.read(file_buffer,length);
+    file.close();
     
-    std::string response;
     
-    if (file) {
-        while ( !file.eof() ) {
-            file.read(line, sizeof(line));
-            response.append(line);
-            printf("%s\n", line);
-        }
-        file.close();       
-    }
-    return response;
+    return *file_buffer;
+    // content length goes from 130 - 60 and output is truncated to '<'
 }
 
 void handleConnection(int socket_file_descriptor, int new_socket_file_descriptor)
 {
     close(socket_file_descriptor);
-//            if ( send(new_socket_file_descriptor, "Hello There!", 13, 0) == -1) { perror("Server error on send"); }
+    
+    //-- request headers -- extract function
     char buffer[500];
     recv(new_socket_file_descriptor, buffer, 500, 0);
     
@@ -88,18 +84,45 @@ void handleConnection(int socket_file_descriptor, int new_socket_file_descriptor
     http_version = tok = strtok(NULL, " ");
     
     printf("\n method : %s\n route : %s\n version : %s\n", method, route, http_version);
-    std::string response = getRoute(route);
-    // Respond with response header.
-    // Send file
-    // Check for invalid files.
-    // -- send 404s
-    write(new_socket_file_descriptor, "Hello~", 6);
+    //-- request headers
+    
+    //-- load file -- extract function
+    std::ifstream file;
+    file.open("./index.html");
+    
+    file.seekg(0, std::ios::end);
+    long length = file.tellg();
+    file.seekg(0, std::ios::beg);
+    
+    printf("[%d]File Length : %ld\n", getpid(),length);
+    char file_buffer[length];
+    
+    file.read(file_buffer,length);
+    file.close();  
+    //-- load file
+    
+    //-- generate timeDate stamp
+    time_t now;
+    time(&now);
+    char date[39]; 
+    strftime(date, sizeof(date), "Date: %a, %d %b %Y %X %Z\r\n\r\n", gmtime(&now));
+    //-- generate timeDate stamp
+   
+    //-- response -- extract function
+    send(new_socket_file_descriptor, "HTTP/1.1 200\r\n", 14, 0);
+    send(new_socket_file_descriptor, "Content-type: text/html\r\n", 25, 0);
+    send(new_socket_file_descriptor, "Server: jherrick-server/0.1\r\n", 29, 0);
+    send(new_socket_file_descriptor, date, sizeof(date), 0);
+    send(new_socket_file_descriptor, file_buffer, sizeof(file_buffer), 0);
     close(new_socket_file_descriptor);
+    //-- response
+    
     exit(0);
 }
 
-void Server::start( const char *port_number )
+void Server::start( const char *port_number, const char *dir )
 {
+
     /// -- Building and binding socket >> 
     int socket_file_descriptor, new_socket_file_descriptor;
     int yes = 1;
@@ -161,7 +184,16 @@ void Server::start( const char *port_number )
         exit(1);
     }
     
-    printf("[%d]Server is running and waiting for connections on port %s\n", getpid(), port_number);
+    printf("Server is running and waiting for connections on port %s\n", port_number);
+     
+    // - change working dir -
+    if (chdir( dir ) == -1) { 
+        printf("Error in Changing Directory: %d\n", errno);
+    } else {
+        char crdir[FILENAME_MAX];
+        printf("Directory Changed to: %s\n", getcwd(crdir, sizeof(crdir)));
+    }
+    // - change workind dir -
     
     while(1){
         sin_size = sizeof client_address;

@@ -16,5 +16,4 @@ public:
     void perr( const char *msg );
 };
 
-
 #endif
